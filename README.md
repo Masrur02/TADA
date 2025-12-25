@@ -151,7 +151,7 @@ For navigating, we integrate TADA with [log-MPPI](https://github.com/IhabMohamed
 2. Then open a terminal and run the TADA (Download the checkpoint for the forest environment and put it in the work_dirs/local-basic folder)
 ```shell 
 cd TADA
-Conda activate tada
+conda activate tada
 sh in_ros.sh TADA_MESH
 ```
 It will provide you with the segmentation output, 2D Traversability Output, and the point cloud with the traversability value.
