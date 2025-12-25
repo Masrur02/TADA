@@ -77,15 +77,15 @@ python tools/convert_datasets/synthia.py data/synthia/ --nproc 8
 # Training
 A training job for gta2cs can be launched using:
 ```bash
-python run_experiments.py --config configs/afr/gtaHR2csHR_afr_hrda.py
+python run_experiments.py --config configs/tada/gtaHR2csHR_tada_hrda.py
 ```
 A training job for syn2cs can be launched using:
 ```bash
-python run_experiments.py --config configs/afr/synHR2csHR_hrda.py
+python run_experiments.py --config configs/tada/synHR2csHR_tada_hrda.py
 ```
 and a training job for rugd2mesh can be launched using:
 ```bash
-python run_experiments.py --config configs/afr/rugd2mesh_hrda.py
+python run_experiments.py --config configs/tada/rugd2mesh_tada_hrda.py
 ```
 The logs and checkpoints are stored in 
 ```bash 
