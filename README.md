@@ -114,9 +114,9 @@ classes. As the Iou for the 3 missing classes is 0, you can do the conversion
 
 Below, we provide checkpoints of AFRDA for the different benchmarks.
 
-* [TADA for GTA→Cityscapes](https://drive.google.com/file/d/14tnErcJmUShyQtzmTBLZ9BG_cRvGM4vV/view?usp=sharing)
-* [TADA for Synthia→Cityscapes](https://drive.google.com/file/d/103tKPC72d_FNjyJcAromFBCGpoCfhxZM/view?usp=sharing)
-* [TADA for RUGD→MESH](https://drive.google.com/file/d/1Iwm1Whm5hnxhAzv7mfvDRnHN5o58Ubnn/view?usp=sharing)
+* [TADA for GTA→Cityscapes](https://indiana-my.sharepoint.com/:u:/r/personal/khanmdal_iu_edu/Documents/TADA/TRAV_CITY.zip?csf=1&web=1&e=KEzfeC)
+* [TADA for Synthia→Cityscapes](https://indiana-my.sharepoint.com/:u:/r/personal/khanmdal_iu_edu/Documents/TADA/TRAV_SYN.zip?csf=1&web=1&e=u3JYBL)
+* [TADA for RUGD→MESH](https://indiana-my.sharepoint.com/:u:/r/personal/khanmdal_iu_edu/Documents/TADA/TRAV_MESH.zip?csf=1&web=1&e=e4egFl)
 
 The checkpoints come with the training logs. Please note that: The logs provide the mIoU for 19 classes. For Synthia→Cityscapes, it is necessary to convert the mIoU to the 16 valid classes. Please, read the section above for converting the mIoU.
 
