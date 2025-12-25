@@ -154,21 +154,20 @@ cd TADA
 Conda activate tada
 sh in_ros.sh TADA_MESH
 ```
-It will give you the segmentation output, 2D Traversability Output, and also the point cloud with the traversability value.
+It will provide you with the segmentation output, 2D Traversability Output, and the point cloud with the traversability value.
 
 
-4. In another terminal, now run the ROS package of [Elevation-mapping](https://github.com/ANYbotics/elevation_mapping) and send the point cloud topic from the previous step as the input topic. It will give you the 2.5D grid map
+4. In another terminal, now run the ROS package of [Elevation-mapping](https://github.com/ANYbotics/elevation_mapping) and send the point cloud topic from the previous step as the input topic. You may need to modify the package to add the traversability values as an additional layer alongside the elevation layer in the grid map. This process produces a 2.5D grid map with an elevation layer and traversability layer.
 5. Now, in another terminal, run the code to convert the 2.5D grid map into a 2D cost map
-
-6. Now run the log-mppi in another terminal by providing the cost map as the input topic. It will keep giving you the velocities after providing the goal. You can provide the goal from RViz itself or from the terminal.
-7. Open RViz, visualize the necessary topics, and from the 2D Nav goal option, give a  goal to the planner
-8. Now use a Python code to publish the velocities generated from the PovNav to Husky
+6. Now run the log-mppi in another terminal by providing the cost map as the input topic. It will continue to provide you with velocities after you have set the goal. You can provide the goal from RViz itself or from the terminal.
+7. Open RViz, visualize the necessary topics, and from the 2D Nav goal option, give a  goal to the planner.
+8. Now use a Python code to publish the velocities generated from the log-MPPI to Husky.
 
 
 
 ## Acknowledgements
 
-AFRDA is based on the following open-source projects. We thank their
+TADA is based on the following open-source projects. We thank their
 authors for making the source code publicly available.
 
 * [HRDA](https://github.com/lhoyer/HRDA)
