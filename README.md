@@ -157,7 +157,7 @@ sh in_ros.sh TADA_MESH
 It will give you the segmentation output, 2D Traversability Output, and also the point cloud with the traversability value.
 
 
-4. In another terminal, now run the ROS package of [Elevation-mapping] (https://github.com/ANYbotics/elevation_mapping) and send the point cloud topic from the previous step as the input topic. It will give you the 2.5D grid map
+4. In another terminal, now run the ROS package of [Elevation-mapping](https://github.com/ANYbotics/elevation_mapping) and send the point cloud topic from the previous step as the input topic. It will give you the 2.5D grid map
 5. Now, in another terminal, run the code to convert the 2.5D grid map into a 2D cost map
 
 6. Now run the log-mppi in another terminal by providing the cost map as the input topic. It will keep giving you the velocities after providing the goal. You can provide the goal from RViz itself or from the terminal.
@@ -173,7 +173,7 @@ authors for making the source code publicly available.
 
 * [HRDA](https://github.com/lhoyer/HRDA)
 * [MIC](https://github.com/lhoyer/MIC)
-* [Elevation-mapping] (https://github.com/ANYbotics/elevation_mapping)
+* [Elevation-mapping](https://github.com/ANYbotics/elevation_mapping)
 * [log-MPPI](https://github.com/IhabMohamed/log-MPPI_ros)
 * [MMSegmentation](https://github.com/open-mmlab/mmsegmentation)
 * [SegFormer](https://github.com/NVlabs/SegFormer)
