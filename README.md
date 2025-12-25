@@ -144,47 +144,25 @@ The most relevant files for AFRDA are:
 * [in_ros.sh](in_ros.sh):
   bash file for running the inference code with ros.
 ## Deployment
-For navigating we integrate AFRDA with [POVNav](https://github.com/Dpushp/POVNav). And then we deploy it on a Clearpath Husky Robot. We assume [ros-noetic]([https://github.com/lhoyer/MIC](https://wiki.ros.org/noetic/Installation/Ubuntu)), the anaconda environment mentioned in the Environment Setup, Husky Robot's sensor and base workspace is already on your Robot's onboard computer.
+For navigating, we integrate TADA with [log-MPPI](https://github.com/IhabMohamed/log-MPPI_ros). And then we deploy it on a Clearpath Husky Robot. We assume [ros-noetic]([https://github.com/lhoyer/MIC](https://wiki.ros.org/noetic/Installation/Ubuntu)), the anaconda environment mentioned in the Environment Setup, Husky Robot's sensor and base workspace is already on your Robot's onboard computer.
 
-### Navigation Instruction (In order)
-1. Open a terminal
-```shell
-roscore
+### Navigation Instruction 
+1. Open a terminal and run all the commands related to the robot's sensor and base workspace for getting the RGB-D image, the robot's odometry.
+2. Then open a terminal and run the TADA (Download the checkpoint for the forest environment and put it in the work_dirs/local-basic folder)
+```shell 
+cd TADA
+Conda activate tada
+sh in_ros.sh TADA_MESH
 ```
-2. In another terminal: run the RGB and the localization launch file
- ```shell 
-cd husky_n_sensors
-source devel/setup.bash
-roslaunch realsense2_camera rs_d400_and_t265.launch
+It will give you the segmentation output, 2D Traversability Output, and also the point cloud with the traversability value.
 
-```
-3. In another terminal run the AFRDA (Download the checkpoint for the forest environment and put it in the work_dirs/local-basic folder)
-```shell 
-cd AFRDA
-Conda activate AFRDA
-sh in_ros.sh AFRDA_mesh
 
-```
-4. In another terminal use the following command to connect the joystick
-```shell 
-sudo ds4drv
+4. In another terminal, now run the ROS package of [Elevation-mapping] (https://github.com/ANYbotics/elevation_mapping) and send the point cloud topic from the previous step as the input topic. It will give you the 2.5D grid map
+5. Now, in another terminal, run the code to convert the 2.5D grid map into a 2D cost map
 
-```
-5. In another terminal run the husky base launch file:
-```shell 
-cd husky_ws
-source devel/setup.bash
-roslaunch husky_base base.launch
-```
-6. Now download the PovNav and in another terminal
-```shell 
-cd povnav_ws
-catkin_make
-source devel/setup.bash
-roslaunch pov_nav sim_pov_nav.launch
-```
-7. Open rviz, visualize the necessary topics, and from 2D Nav goal option give goal to the planner
-8. Now use a python code to publish the velocities generated from the PovNav to Husky
+6. Now run the log-mppi in another terminal by providing the cost map as the input topic. It will keep giving you the velocities after providing the goal. You can provide the goal from RViz itself or from the terminal.
+7. Open RViz, visualize the necessary topics, and from the 2D Nav goal option, give a  goal to the planner
+8. Now use a Python code to publish the velocities generated from the PovNav to Husky
 
 
 
@@ -195,6 +173,7 @@ authors for making the source code publicly available.
 
 * [HRDA](https://github.com/lhoyer/HRDA)
 * [MIC](https://github.com/lhoyer/MIC)
-* [POVNav](https://github.com/Dpushp/POVNav)
+* [Elevation-mapping] (https://github.com/ANYbotics/elevation_mapping)
+* [log-MPPI](https://github.com/IhabMohamed/log-MPPI_ros)
 * [MMSegmentation](https://github.com/open-mmlab/mmsegmentation)
 * [SegFormer](https://github.com/NVlabs/SegFormer)
