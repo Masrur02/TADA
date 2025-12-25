@@ -21,7 +21,7 @@ pip install mmcv-full==1.3.7  # requires the other packages to be installed firs
 ```
 
 Please, download the MiT-B5 ImageNet weights provided by [SegFormer](https://github.com/NVlabs/SegFormer?tab=readme-ov-file#training)
-from their [OneDrive](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/xieenze_connect_hku_hk/EvOn3l1WyM5JpnMQFSEO5b8B7vrHw9kDaJGII-3N9KNhrg?e=cpydzZ) and put them in the folder `AFRDA/`.
+from their [OneDrive](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/xieenze_connect_hku_hk/EvOn3l1WyM5JpnMQFSEO5b8B7vrHw9kDaJGII-3N9KNhrg?e=cpydzZ) and put them in the folder `TADA/`.
 
 ## Dataset Setup
 
@@ -29,7 +29,7 @@ from their [OneDrive](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/xiee
 gt_trainvaltest.zip from [here](https://www.cityscapes-dataset.com/downloads/)
 and extract them to `data/cityscapes`.
 
-**GTA:** Please, download all image and label packages from
+**GTA:** Please, download all the image and label packages from
 [here](https://download.visinf.tu-darmstadt.de/data/from_games/) and extract
 them to `data/gta`.
 
@@ -37,11 +37,11 @@ them to `data/gta`.
 [here](http://synthia-dataset.net/downloads/) and extract it to `data/synthia`.
 
 
-**MESH**: You can collect your own forest environment dataset and put them to `data/MESH`. 
+**MESH**: You can collect your own forest environment dataset and put it in `data/MESH`. 
 
 The final folder structure should look like this:
 ```bash 
-DEDA
+Datasets
 ├── ...
 ├── data
 │   
@@ -112,7 +112,7 @@ classes. As the Iou for the 3 missing classes is 0, you can do the conversion
 
 ## Checkpoints
 
-Below, we provide checkpoints of AFRDA for the different benchmarks.
+Below, we provide checkpoints of TADA for the different benchmarks.
 
 * [TADA for GTA→Cityscapes](https://indiana-my.sharepoint.com/:u:/r/personal/khanmdal_iu_edu/Documents/TADA/TRAV_CITY.zip?csf=1&web=1&e=KEzfeC)
 * [TADA for Synthia→Cityscapes](https://indiana-my.sharepoint.com/:u:/r/personal/khanmdal_iu_edu/Documents/TADA/TRAV_SYN.zip?csf=1&web=1&e=u3JYBL)
@@ -136,13 +136,13 @@ The most relevant files for AFRDA are:
 * [experiments.py](experiments.py):
   Definition of the experiment configurations in the paper.
 * [mmseg/models/decode_heads/hrda_head.py](mmseg/models/decode_models/hrda_head.py):
-  Implementation of the hrda head with integrated AFR module.
+  Implementation of the HRDA head with an integrated HRGLR module and a traversability head.
 * [mmseg/models/uda/dacs.py](mmseg/models/uda/dacs.py):
   Implementation of the DAFormer/HRDA self-training.
 * [tools/in_ros.py](tools/in_ros.py):
   Inference code for implementation in ROS.
 * [in_ros.sh](in_ros.sh):
-  bash file for running the inference code with ros.
+  bash file for running the inference code with ROS.
 ## Deployment
 For navigating, we integrate TADA with [log-MPPI](https://github.com/IhabMohamed/log-MPPI_ros). And then we deploy it on a Clearpath Husky Robot. We assume [ros-noetic]([https://github.com/lhoyer/MIC](https://wiki.ros.org/noetic/Installation/Ubuntu)), the anaconda environment mentioned in the Environment Setup, Husky Robot's sensor and base workspace is already on your Robot's onboard computer.
 
