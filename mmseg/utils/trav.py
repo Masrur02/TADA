@@ -42,7 +42,7 @@ FOREST_TRAV_PRIOR = torch.tensor([
     0.00,  # 15 bicycle - obstacle
     0.00,  # 16 person - obstacle
     0.00,  # 17 fence - obstacle
-    0.25,  # 18 bush - minor obstacle, sometimes passable
+    0.25,  # 18 bush - obstacle
     0.00,  # 19 sign - obstacle
     0.00,  # 20 rock - low traversability, but sometimes drive-over
     0.70,  # 21 bridge - usually traversable (flat surface)
