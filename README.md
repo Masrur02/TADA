@@ -33,7 +33,7 @@ and extract them to `data/cityscapes`.
 [here](https://download.visinf.tu-darmstadt.de/data/from_games/) and extract
 them to `data/gta`.
 
-**Synthia (Optional):** Please, download SYNTHIA-RAND-CITYSCAPES from
+**Synthia (Optional):** Please, download SYNTHIA from
 [here](http://synthia-dataset.net/downloads/) and extract it to `data/synthia`.
 
 
